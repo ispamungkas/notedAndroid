@@ -3,6 +3,7 @@ package com.maspam.catatan;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -18,9 +19,9 @@ public class MenuActivity extends AppCompatActivity {
         tvEmail = findViewById(R.id.tv_email);
         tvPassword = findViewById(R.id.tv_password);
 
-        Bundle extras = getIntent().getExtras();
-        String email = extras.getString("email");
-        String password = extras.getString("password");
+        Intent extras = getIntent();
+        String email = extras.getStringExtra("email");
+        String password = extras.getStringExtra("password");
 
         tvEmail.setText(email);
         tvPassword.setText(password);
